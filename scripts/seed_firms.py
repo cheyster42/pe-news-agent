@@ -17,7 +17,7 @@ load_dotenv()
 DATABASE_URL = os.environ["DATABASE_URL"]
 
 # ── Firm definitions ──────────────────────────────────────────────────────────
-# Fields: name, slug, type, rss_url, website_url, is_nda
+# Fields: name, slug, type, rss_url, website_url, is_nda, access_tier
 #
 # type options:
 #   'portfolio'   — VRP/ZIP portfolio company (confirm NDA status before sharing)
@@ -39,6 +39,7 @@ FIRMS = [
         "rss_url": "https://www.breakthroughenergy.org/feed",
         "website_url": "https://www.breakthroughenergy.org/news",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Energy Impact Partners",
@@ -47,6 +48,7 @@ FIRMS = [
         "rss_url": "https://www.energyimpactpartners.com/feed",
         "website_url": "https://www.energyimpactpartners.com/news",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Energize Capital",
@@ -55,6 +57,7 @@ FIRMS = [
         "rss_url": "https://www.energizecap.com/rss",
         "website_url": "https://www.energizecap.com/news",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Congruent Ventures",
@@ -63,6 +66,7 @@ FIRMS = [
         "rss_url": None,  # publishes via Substack — add URL if they activate one
         "website_url": "https://www.congruentvc.com",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Lowercarbon Capital",
@@ -71,6 +75,7 @@ FIRMS = [
         "rss_url": "https://medium.com/feed/lowercarbon-capital",
         "website_url": "https://lowercarboncapital.com",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Prelude Ventures",
@@ -79,6 +84,7 @@ FIRMS = [
         "rss_url": None,
         "website_url": "https://www.preludeventures.com",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Galvanize Climate Solutions",
@@ -87,6 +93,7 @@ FIRMS = [
         "rss_url": None,
         "website_url": "https://galvanizeclimate.com",
         "is_nda": False,
+        "access_tier": "public",
     },
 
     # ── Energy Sector Firms ───────────────────────────────────────────────────
@@ -98,6 +105,7 @@ FIRMS = [
         "rss_url": "https://www.nexteraenergy.com/news/rss.xml",
         "website_url": "https://www.nexteraenergy.com/news",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Constellation Energy",
@@ -106,6 +114,7 @@ FIRMS = [
         "rss_url": None,
         "website_url": "https://www.constellationenergy.com/newsroom",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "ExxonMobil",
@@ -114,6 +123,7 @@ FIRMS = [
         "rss_url": "https://corporate.exxonmobil.com/rss/news",
         "website_url": "https://corporate.exxonmobil.com/news",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "BP",
@@ -122,6 +132,7 @@ FIRMS = [
         "rss_url": "https://www.bp.com/en/global/corporate/news-and-insights/press-releases.rss.xml",
         "website_url": "https://www.bp.com/en/global/corporate/news-and-insights",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Equinor",
@@ -130,6 +141,7 @@ FIRMS = [
         "rss_url": "https://www.equinor.com/news.rss",
         "website_url": "https://www.equinor.com/news",
         "is_nda": False,
+        "access_tier": "public",
     },
 
     # ── Industry Analysts / News Sources ─────────────────────────────────────
@@ -141,6 +153,7 @@ FIRMS = [
         "rss_url": "https://www.canarymedia.com/rss.xml",
         "website_url": "https://www.canarymedia.com",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "CleanTechnica",
@@ -149,6 +162,7 @@ FIRMS = [
         "rss_url": "https://cleantechnica.com/feed",
         "website_url": "https://cleantechnica.com",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Renewable Energy World",
@@ -157,6 +171,7 @@ FIRMS = [
         "rss_url": "https://www.renewableenergyworld.com/feed",
         "website_url": "https://www.renewableenergyworld.com",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "MIT Energy Initiative",
@@ -165,6 +180,7 @@ FIRMS = [
         "rss_url": "https://energy.mit.edu/news/feed",
         "website_url": "https://energy.mit.edu/news",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Energy Storage News",
@@ -173,6 +189,7 @@ FIRMS = [
         "rss_url": "https://www.energy-storage.news/feed",
         "website_url": "https://www.energy-storage.news",
         "is_nda": False,
+        "access_tier": "public",
     },
     
     # ── Additional high-signal sources (from mentor recommendations) ──────────
@@ -183,6 +200,7 @@ FIRMS = [
         "rss_url": "https://www.ctvc.co/feed",
         "website_url": "https://www.ctvc.co",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Axios Energy & Climate",
@@ -191,6 +209,7 @@ FIRMS = [
         "rss_url": "https://api.axios.com/feed/energy-climate",
         "website_url": "https://www.axios.com/energy-climate",
         "is_nda": False,
+        "access_tier": "public",
     },
     {
         "name": "Stratechery",
@@ -199,6 +218,7 @@ FIRMS = [
         "rss_url": "https://stratechery.com/feed",
         "website_url": "https://stratechery.com",
         "is_nda": False,
+        "access_tier": "registration",
     },
     {
         "name": "StrictlyVC",
@@ -207,6 +227,7 @@ FIRMS = [
         "rss_url": "https://strictlyvc.com/feed",
         "website_url": "https://strictlyvc.com",
         "is_nda": False,
+        "access_tier": "registration",
     },
     {
         "name": "Sourcery (Molly O'Shea)",
@@ -215,6 +236,63 @@ FIRMS = [
         "rss_url": "https://mollyoshea.substack.com/feed",
         "website_url": "https://mollyoshea.substack.com",
         "is_nda": False,
+        "access_tier": "registration",
+    },
+
+    # ── Tier 1 Public Sources ─────────────────────────────────────────────────
+    {
+        "name": "PV Tech",
+        "slug": "pv-tech",
+        "type": "media",
+        "rss_url": "https://www.pv-tech.org/feed",
+        "website_url": "https://www.pv-tech.org",
+        "is_nda": False,
+        "access_tier": "public",
+    },
+    {
+        "name": "reNEWS",
+        "slug": "renews",
+        "type": "media",
+        "rss_url": "https://renews.biz/feed",
+        "website_url": "https://renews.biz",
+        "is_nda": False,
+        "access_tier": "public",
+    },
+    {
+        "name": "Carbon Brief",
+        "slug": "carbon-brief",
+        "type": "media",
+        "rss_url": "https://www.carbonbrief.org/feed",
+        "website_url": "https://www.carbonbrief.org",
+        "is_nda": False,
+        "access_tier": "public",
+    },
+    {
+        "name": "RMI",
+        "slug": "rmi",
+        "type": "media",
+        "rss_url": "https://rmi.org/feed",
+        "website_url": "https://rmi.org",
+        "is_nda": False,
+        "access_tier": "public",
+    },
+    {
+        "name": "Volts",
+        "slug": "volts",
+        "type": "media",
+        "rss_url": "https://www.volts.wtf/feed",
+        "website_url": "https://www.volts.wtf",
+        "is_nda": False,
+        "access_tier": "public",
+    },
+    {
+        "name": "Heatmap News",
+        "slug": "heatmap-news",
+        "type": "media",
+        "rss_url": "https://heatmap.news/feed",
+        "website_url": "https://heatmap.news",
+        "is_nda": False,
+        "access_tier": "public",
     },
 
     # ── VRP / ZIP Portfolio Companies ────────────────────────────────────────
@@ -228,6 +306,7 @@ FIRMS = [
         "rss_url": None,
         "website_url": "https://example.com",
         "is_nda": True,                      # default NDA=True until confirmed otherwise
+        "access_tier": "public",
     },
     {
         "name": "Portfolio Company B",       # replace with real name
@@ -236,6 +315,7 @@ FIRMS = [
         "rss_url": None,
         "website_url": "https://example.com",
         "is_nda": True,
+        "access_tier": "public",
     },
 ]
 
@@ -250,9 +330,9 @@ def run():
             cur = conn.cursor()
             for f in FIRMS:
                 cur.execute("""
-                    INSERT INTO firms (name, slug, type, rss_url, website_url, is_nda)
-                    VALUES (%(name)s, %(slug)s, %(type)s, %(rss_url)s, %(website_url)s, %(is_nda)s)
-                    ON CONFLICT (slug) DO NOTHING
+                    INSERT INTO firms (name, slug, type, rss_url, website_url, is_nda, access_tier)
+                    VALUES (%(name)s, %(slug)s, %(type)s, %(rss_url)s, %(website_url)s, %(is_nda)s, %(access_tier)s)
+                    ON CONFLICT (slug) DO UPDATE SET access_tier = EXCLUDED.access_tier
                 """, f)
                 if cur.rowcount:
                     inserted += 1

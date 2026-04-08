@@ -8,6 +8,8 @@ are included in the email.
 
 KEYWORDS = [
     "VRP",
+    "Vision Ridge",
+    "Zero Infinity",
     "ZIP",
     "energy storage",
     "BESS",
