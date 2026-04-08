@@ -1,0 +1,9 @@
+anthropic 
+fastapi 
+uvicorn[standard] 
+psycopg2-binary 
+feedparser 
+beautifulsoup4 
+requests 
+resend 
+python-dotenv
