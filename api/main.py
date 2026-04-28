@@ -88,11 +88,11 @@ def list_articles(
 
     sql = f"""
         SELECT
-            a.id,
+            a.id::text,
             a.url,
             a.title,
-            a.published_at,
-            a.ingested_at,
+            a.published_at::text,
+            a.ingested_at::text,
             a.industry,
             a.deal_type,
             a.geography,
@@ -121,12 +121,12 @@ def list_articles(
 def get_article(article_id: str):
     sql = """
         SELECT
-            a.id,
+            a.id::text,
             a.url,
             a.title,
             a.raw_text,
-            a.published_at,
-            a.ingested_at,
+            a.published_at::text,
+            a.ingested_at::text,
             a.industry,
             a.deal_type,
             a.geography,
@@ -134,9 +134,9 @@ def get_article(article_id: str):
             a.relevance_score,
             a.sentiment_color,
             a.summary,
-            f.name       AS firm_name,
-            f.slug       AS firm_slug,
-            f.type       AS firm_type,
+            f.name        AS firm_name,
+            f.slug        AS firm_slug,
+            f.type        AS firm_type,
             f.website_url AS firm_website
         FROM articles a
         JOIN firms f ON f.id = a.firm_id
@@ -156,15 +156,16 @@ def get_article(article_id: str):
 def list_digests():
     sql = """
         SELECT
-            d.id,
-            d.created_at,
-            d.period_start,
-            d.period_end,
+            d.id::text,
+            d.digest_date::text,
+            d.email_sent,
+            d.sent_at::text,
+            d.created_at::text,
             COUNT(da.article_id) AS article_count
         FROM digests d
         LEFT JOIN digest_articles da ON da.digest_id = d.id
         GROUP BY d.id
-        ORDER BY d.created_at DESC
+        ORDER BY d.digest_date DESC
         LIMIT 50
     """
     with get_cursor() as cur:
